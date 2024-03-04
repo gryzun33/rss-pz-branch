@@ -13,7 +13,7 @@
     "fix": "eslint . --fix --ext .ts"
   },
   "validate-branch-name": {
-    "pattern": "^\\d{3}$",
+    "pattern": "^feat/RSS-PZ-\\d{1,2}_.*$",
     "errorMsg": "your own error message"
   },
   "devDependencies": {
