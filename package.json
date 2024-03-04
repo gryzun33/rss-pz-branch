@@ -10,9 +10,10 @@
     "ci:format": "prettier --check \"src/**/*.{js,css,scss,ts,html}\"",
     "format": "prettier --write \"src/**/*.{js,css,scss,ts,html}\"",
     "lint": "eslint . --ext .ts",
-    "fix": "eslint . --fix --ext .ts"
+    "fix": "eslint . --fix --ext .ts",
+    "prepare": "husky"
   },
-   "husky": {
+  "husky": {
     "hooks": {
       "pre-commit": "npm run ci:format",
       "pre-push": "npm run lint && branch=$(git symbolic-ref --short HEAD) && if [[ ! $branch =~ '^feat/RSS-PZ-\\d{2,}_.*$' ]]; then echo \"Branch name should start with 'feat/RSS-PZ-'\" && exit 1; fi"
