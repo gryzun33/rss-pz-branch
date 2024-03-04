@@ -1,0 +1,37 @@
+{
+  "name": "rss-puzzle",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "ci:format": "prettier --check \"src/**/*.{js,css,scss,ts,html}\"",
+    "format": "prettier --write \"src/**/*.{js,css,scss,ts,html}\"",
+    "lint": "eslint . --ext .ts",
+    "fix": "eslint . --fix --ext .ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run ci:format",
+      "pre-push": "npm run lint && branch=$(git symbolic-ref --short HEAD) && if [[ ! $branch =~ '^feat/RSS-PZ-\\d{2,}_.*$' ]]; then echo \"Branch name should start with 'feat/RSS-PZ-'\" && exit 1; fi"
+    }
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "3.2.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "dependencies": {
+    "husky": "^9.0.11"
+  }
+}
