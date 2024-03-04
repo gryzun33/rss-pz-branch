@@ -1,1 +1,1 @@
-npm run lint && branch=$(git symbolic-ref --short HEAD) && if [[ ! $branch =~ '^feat/RSS-PZ-\\d{2,}_.*$' ]]; then echo \"Branch name should start with 'feat/RSS-PZ-'\" && exit 1; fi
+npm run lint && branch=$(git symbolic-ref --short HEAD) && if [[ ! $branch =~ '^feat\/RSS-PZ-\d{2,}' ]]; then echo \"Branch name should start with 'feat/RSS-PZ-'\" && exit 1; fi
