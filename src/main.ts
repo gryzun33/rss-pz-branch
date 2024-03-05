@@ -1,6 +1,6 @@
 import './style.css';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `hello`;
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `   hello`;
 
 // const x = 6;
 
